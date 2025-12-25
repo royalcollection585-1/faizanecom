@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FaizanEcom</title>
+    <link rel="stylesheet" href="sales.css?v=?php echo time(); ?>">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/animations.min.css"
+        integrity="sha512-GKHaATMc7acW6/GDGVyBhKV3rST+5rMjokVip0uTikmZHhdqFWC7fGBaq6+lf+DOS5BIO8eK6NcyBYUBCHUBXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+
+</head>
+
+<body>
+
+
+
+    <a href="index.html" class="back-btn">
+        <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span> Back to home
+    </a>
+
+
+
+
+
+    <div class=" sales2 container-fluid ">
+
+        <div class="prof2">
+            <p>Sales Proofs</p>
+        </div>
+        <div class="sal2">
+            <h1>
+                Sales<span>Proofs</span>
+            </h1>
+        </div>
+
+        <div class="from">
+            <p>Sales proofs from satisfied clients.</p>
+        </div>
+        <section class="proof-section">
+
+            <button class="arrow2 left-arrow" id="prevBtn">❮</button>
+
+            <div class="proof-wrapper">
+                <img id="img1" class="proof-img  lightbox-trigger" />
+                <img id="img2" class="proof-img  lightbox-trigger" />
+                <img id="img3" class="proof-img  lightbox-trigger" />
+            </div>
+
+            <button class="arrow2 right-arrow" id="nextBtn">❯</button>
+
+        </section>
+
+        <div class="pagination" id="pagination"></div>
+    </div>
+
+
+
+
+
+    <!-- buttom to top btn -->
+
+    <button id="topBtn1"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.min.js"
+        integrity="sha512-y8/3lysXD6CUJkBj4RZM7o9U0t35voPBOSRHLvlUZ2zmU+NLQhezEpe/pMeFxfpRJY7RmlTv67DYhphyiyxBRA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+
+<!-- proof wle  pics ka java script  -->
+    <script>
+    let totalPhotos = 100; // total images
+    let perPage = 3;
+    let totalPages = Math.ceil(totalPhotos / perPage);
+    let currentPage = 1;
+
+    // Responsive perPage
+    function getPerPage() {
+        return window.innerWidth <= 991 ? 1 : 3;
+    }
+
+    // Calculate total pages
+    function calculateTotalPages() {
+        perPage = getPerPage();
+        return Math.ceil(totalPhotos / perPage);
+    }
+
+    // Load images for current page
+    function loadImages() {
+        perPage = getPerPage();
+        totalPages = calculateTotalPages();
+
+        const start = (currentPage - 1) * perPage + 1;
+
+        const imgs = [
+            document.getElementById("img1"),
+            document.getElementById("img2"),
+            document.getElementById("img3")
+        ];
+
+        imgs.forEach((img, index) => {
+            let imgNum = start + index;
+            if (imgNum <= totalPhotos && index < perPage) {
+                img.src = `./images/proof/${imgNum}.jpg`;
+                img.style.display = "block";
+            } else {
+                img.style.display = "none";
+            }
+        });
+
+        loadPagination();
+    }
+
+    // Load pagination buttons dynamically
+    function loadPagination() {
+        const pag = document.getElementById("pagination");
+        pag.innerHTML = "";
+        totalPages = calculateTotalPages();
+
+        const prev = currentPage - 1 < 1 ? totalPages : currentPage - 1;
+        const next = currentPage + 1 > totalPages ? 1 : currentPage + 1;
+
+        pag.innerHTML += `<button onclick="gotoPage(${prev})">❮</button>`;
+
+        const addBtn = (num) => {
+            pag.innerHTML +=
+                `<button onclick="gotoPage(${num})" class="${currentPage === num ? 'active' : ''}">${num}</button>`;
+        };
+
+        if (window.innerWidth <= 600) {
+            // Mobile: show first, current, last
+            addBtn(1);
+            if (currentPage > 2) pag.innerHTML += `<button class="ellipsis">...</button>`;
+            if (currentPage !== 1 && currentPage !== totalPages) addBtn(currentPage);
+            if (currentPage < totalPages - 1) pag.innerHTML += `<button class="ellipsis">...</button>`;
+            if (totalPages > 1) addBtn(totalPages);
+        } else {
+            // Desktop: smart pagination with first, last, current±1, dots
+            addBtn(1);
+
+            if (currentPage > 4) pag.innerHTML += `<button class="ellipsis">...</button>`;
+
+            for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+                if (i > 1 && i < totalPages) {
+                    addBtn(i);
+                }
+            }
+
+            if (currentPage < totalPages - 3) pag.innerHTML += `<button class="ellipsis">...</button>`;
+
+            if (totalPages > 1) addBtn(totalPages);
+        }
+
+        pag.innerHTML += `<button onclick="gotoPage(${next})">❯</button>`;
+    }
+
+    // Navigate to page
+    function gotoPage(num) {
+        totalPages = calculateTotalPages();
+        if (num < 1) num = totalPages;
+        if (num > totalPages) num = 1;
+        currentPage = num;
+        loadImages();
+    }
+
+    // Arrow buttons
+    document.getElementById("prevBtn").onclick = () => gotoPage(currentPage - 1);
+    document.getElementById("nextBtn").onclick = () => gotoPage(currentPage + 1);
+
+    // Update on resize
+    window.addEventListener('resize', loadImages);
+
+    // Initial load
+    loadImages();
+    </script>
+
+
+
+    <!-- for top to bottom js -->
+
+    <script>
+    const topBtn1 = document.getElementById("topBtn1");
+
+    // show/hide
+    window.addEventListener("scroll", function() {
+        topBtn1.style.display = window.scrollY > 200 ? "block" : "none";
+    });
+
+    // smooth scroll to top
+    topBtn1.addEventListener("click", function() {
+        const duration = 400;
+        const start = window.scrollY;
+        const startTime = performance.now();
+
+        function scrollStep(timestamp) {
+            const elapsed = timestamp - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            window.scrollTo(0, start * (1 - easeInOutCubic(progress)));
+
+            if (progress < 1) requestAnimationFrame(scrollStep);
+        }
+
+        function easeInOutCubic(t) {
+            return t < 0.5 ?
+                4 * t * t * t :
+                1 - Math.pow(-2 * t + 2, 3) / 2;
+        }
+
+        requestAnimationFrame(scrollStep);
+    });
+    </script>
+
+
+<!-- for lightbox  model  -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".close-btn");
+
+        // Click on image → Show
+        document.querySelectorAll(".lightbox-trigger").forEach(img => {
+            img.addEventListener("click", () => {
+                lightbox.style.display = "flex";
+                lightboxImg.src = img.src;
+            });
+        });
+
+        // Close button
+        closeBtn.addEventListener("click", () => {
+            lightbox.style.display = "none";
+        });
+
+        // Click outside image → close
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = "none";
+            }
+        });
+    });
+    </script>
+
+</body>
+
+</html>

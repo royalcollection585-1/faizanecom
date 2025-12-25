@@ -1,0 +1,2990 @@
+
+/* top to bottm  */
+
+
+
+
+#topBtn1 {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 12px 16px;
+  background: #fb9603;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+  line-height: 24px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+#topBtn1:hover {
+  background: #faa11a;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.logo a {
+  color: black;
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+.logo a span {
+  color: #fb9603;
+}
+
+
+
+@media (min-width:992px) {
+
+  /* ---------- Normal nav-links (non-dropdown) ---------- */
+  .navbar-nav .nav-link:not(.dropdown-toggle) {
+    position: relative;
+    color: black;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:not(.dropdown-toggle)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #fb9603;
+    transition: width 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:not(.dropdown-toggle):hover {
+    color: #fb9603;
+  }
+
+  .navbar-nav .nav-link:not(.dropdown-toggle):hover::after {
+    width: 100%;
+  }
+
+  /* ---------- Dropdown parent links ---------- */
+  .navbar-nav .dropdown-toggle {
+    position: relative;
+    color: black;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-nav .dropdown-toggle:hover {
+    color: #fb9603;
+    /* only color changes, no underline */
+  }
+
+  .navbar-nav .dropdown-toggle::after {
+    content: '';
+    /* remove underline */
+  }
+
+  /* ---------- Dropdown menu ---------- */
+  .navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+    /* show dropdown on hover */
+  }
+
+  .navbar-nav .dropdown-menu {
+    margin-left: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 200;
+    font-size: 16px;
+    background-color: white;
+    /* dropdown background */
+    border: 1px solid #ddd;
+    /* optional border */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  /* Dropdown items hover */
+  .navbar-nav .dropdown-item {
+    color: black;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-nav .dropdown-item:hover {
+    background-color: #fb9603;
+    /* highlight on hover */
+    color: white;
+    /* text color */
+  }
+}
+
+
+
+
+
+
+
+@media (max-width: 992px) {
+
+  .custom-nav {
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-radius: 50px;
+    padding: 20px !important;
+    background-color: white;
+
+  }
+
+
+
+  .navbar-toggler-icon {
+    background-image: none !important;
+    position: relative;
+    width: 28px;
+    height: 22px;
+    display: inline-block;
+  }
+
+  /* Common line style */
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after,
+  .navbar-toggler-icon span {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 3px;
+    background-color: #fb9603;
+    /* yellow color */
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* 🔸 Top line (shorter, moved a little right) */
+  .navbar-toggler-icon::before {
+    width: 30px;
+    top: 0;
+    left: 0;
+
+  }
+
+  /* 🔸 Middle line (full width, centered) */
+  .navbar-toggler-icon span {
+    width: 20px;
+    top: 9px;
+    left: 9px;
+  }
+
+  /* 🔸 Bottom line (shorter, moved a little left) */
+  .navbar-toggler-icon::after {
+    width: 25px;
+    bottom: 2px;
+    left: 5px;
+  }
+
+
+}
+
+
+
+@media (max-width: 991px) {
+
+  /* Offcanvas menu width */
+  .offcanvas.offcanvas-end {
+    width: 80% !important;
+    /* thoda wider for mobile */
+  }
+
+  /* Offcanvas header */
+  .offcanvas-header h5 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    /* responsive font size */
+    margin-top: 2vh;
+    margin-left: 20vw;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .offcanvas-header h5 span {
+    color: #fb9603;
+  }
+
+  /* Horizontal line styling */
+  .logo1 hr {
+    border: 1px solid black;
+    width: 80%;
+    /* screen width ke hisaab se adjust */
+    margin-left: 5vw;
+    margin-top: -1vh;
+  }
+
+  /* Nav links inside offcanvas */
+  .navbar-nav .nav-link {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    /* responsive font */
+    font-weight: 200;
+    margin-left: clamp(1rem, 20vw, 8rem);
+    /* remove large fixed margin */
+    margin-top: 1.5vh;
+    padding: 0.8vh 2vw;
+    /* padding for tap-friendly links */
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #fb9603;
+  }
+
+  /* Optional: make nav-links stacked vertically */
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    /* spacing between links */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 992px) {
+  .custom-nav {
+    margin-top: 7vh;
+    /* smaller top spacing */
+    margin-left: 8vw;
+    /* responsive horizontal spacing */
+    margin-right: 8vw;
+    border-radius: clamp(20px, 5vw, 70px);
+    /* auto scaling curve */
+    padding: clamp(0.5vh, 1vw, 1vh) clamp(1vw, 2vw, 2vw) !important;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .logo a {
+    font-size: clamp(2rem, 2.5vw, 3rem);
+    font-weight: bold;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
+    font-weight: 200;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: clamp(1vw, 2vw, 5vw);
+    /* responsive horizontal spacing */
+  }
+
+  /* Optional: if you want each specific menu spacing to be slightly different */
+  .navbar-nav .cert .nav-link {
+    margin-left: clamp(2vw, 4vw, 6vw);
+  }
+
+  .navbar-nav .about .nav-link {
+    margin-left: clamp(1vw, 2vw, 4vw);
+  }
+
+  .navbar-nav .why .nav-link {
+    margin-left: clamp(1vw, 2vw, 4vw);
+  }
+
+  .navbar-nav .dropdown .nav-link {
+    margin-left: clamp(1vw, 2vw, 4vw);
+  }
+
+  .navbar-nav .service .nav-link {
+    margin-left: clamp(1vw, 2vw, 4vw);
+  }
+
+  .navbar-nav .contact .nav-link {
+    margin-left: clamp(1vw, 2vw, 4vw);
+  }
+}
+
+
+
+
+
+/* card home section css */
+
+
+@media (max-width: 426px) {
+  .card {
+    background: linear-gradient(180deg, #faf6ff 0%, #f0ecff 100%) !important;
+    /* soft gradient */
+    border-radius: 15px !important;
+    /* slightly bigger rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    /* softer shadow for floating effect */
+    padding: 25px !important;
+    /* more breathing space */
+    width: 96%;
+    max-width: 900px;
+    /* optional max-width for large screens */
+    height: auto;
+    margin: 20px auto;
+    /* more spacing top/bottom */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* optional hover effect */
+  }
+
+  .card-body {
+    margin-top: 15vh;
+    align-items: center;
+    /* horizontal center */
+    text-align: center;
+    /* center text */
+    gap: clamp(0.5rem, 2vw, 2rem);
+    /* vertical spacing between items */
+    padding: 2rem 1rem;
+    /* inner padding */
+  }
+
+  .card-body .khan {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #fb9603;
+    font-size: clamp(2rem, 4vw, 5rem);
+    /* responsive font-size */
+    margin: 0;
+    /* remove fixed margin */
+  }
+
+  .card-body .inter,
+  .card-body .com,
+  .card-body .ser {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: clamp(2rem, 3.5vw, 5rem);
+    /* responsive font-size */
+    margin: 0;
+    /* remove fixed margin */
+  }
+
+  .card-text {
+    display: flex;
+    flex-direction: column;
+    /* vertical stack */
+    align-items: center;
+    /* center horizontally */
+    gap: 0.5rem;
+    /* vertical spacing between lines */
+    margin-top: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  /* First line: Trusted, Global, Fast */
+  .card-text .line-one {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    /* spacing between words */
+  }
+
+  .card-text .line-one .trust,
+  .card-text .line-one .fast {
+    color: #fb9603;
+    /* red words */
+  }
+
+  .card-text .line-one .global {
+    color: black;
+    /* black word */
+  }
+
+  /* Second line: Setup */
+  .card-text .setup {
+    display: block;
+    /* new line */
+    color: #fb9603;
+    /* red */
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (min-width: 427px) and (max-width:991px) {
+
+  .card {
+    background: linear-gradient(180deg, #faf6ff 0%, #f0ecff 100%) !important;
+    /* soft gradient */
+    border-radius: 15px !important;
+    /* slightly bigger rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    /* softer shadow for floating effect */
+    padding: 25px !important;
+    /* more breathing space */
+    width: 96%;
+    max-width: 900px;
+    /* optional max-width for large screens */
+    height: auto;
+    margin: 20px auto;
+    /* more spacing top/bottom */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* optional hover effect */
+  }
+
+  .card-body {
+    margin-top: 15vh;
+    align-items: center;
+    /* horizontal center */
+    text-align: center;
+    /* center text */
+    gap: clamp(0.5rem, 2vw, 2rem);
+    /* vertical spacing between items */
+    padding: 2rem 1rem;
+    /* inner padding */
+  }
+
+  .card-body .khan {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #fb9603;
+    font-size: clamp(3rem, 3vw, 5rem);
+    /* responsive font-size */
+    margin: 0;
+    /* remove fixed margin */
+  }
+
+  .card-body .inter,
+  .card-body .com,
+  .card-body .ser {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: clamp(3rem, 3.5vw, 7rem);
+    /* responsive font-size */
+    margin: 0;
+    /* remove fixed margin */
+  }
+
+  .card-text {
+    display: flex;
+    flex-direction: column;
+    /* vertical stack */
+    align-items: center;
+    /* center horizontally */
+    gap: 0.5rem;
+    /* vertical spacing between lines */
+    margin-top: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  /* First line: Trusted, Global, Fast */
+  .card-text .line-one {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    /* spacing between words */
+  }
+
+  .card-text .line-one .trust,
+  .card-text .line-one .fast {
+    color: #fb9603;
+    /* red words */
+  }
+
+  .card-text .line-one .global {
+    color: black;
+    /* black word */
+  }
+
+  /* Second line: Setup */
+  .card-text .setup {
+    display: block;
+    /* new line */
+    color: #fb9603;
+    /* red */
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}
+
+
+
+
+
+
+
+@media (min-width:992px) {
+
+
+  .card {
+    background: linear-gradient(180deg, #faf6ff 0%, #f0ecff 100%) !important;
+    /* soft gradient */
+    border-radius: 15px !important;
+    /* slightly bigger rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    /* softer shadow for floating effect */
+    padding: 25px !important;
+    /* more breathing space */
+    width: 91%;
+
+    height: auto;
+    margin: 20px auto;
+    /* more spacing top/bottom */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* optional hover effect */
+  }
+
+  /* Line 1: Faizan Khan International */
+  .name-line {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .khan,
+  .inter {
+    font-size: clamp(4rem, 4vw, 6rem);
+    font-weight: bold;
+    margin-top: 25vh;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .khan {
+    color: #fb9603;
+  }
+
+  .inter {
+    color: black;
+  }
+
+  /* Line 2: E-Commerce Services */
+  .brand-line {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 1vh;
+  }
+
+  .com {
+    font-size: clamp(4rem, 4vw, 6rem);
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+  }
+
+  .ser {
+    font-size: clamp(4rem, 4vw, 6rem);
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+  }
+
+
+  .card-body p {
+    margin-top: 5vh;
+    font-size: clamp(1.5rem, 1.5vw, 2.5rem);
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    /* sab kuch center */
+    line-height: 1.2;
+    /* thoda close gap between lines */
+  }
+
+  .card-text .trust,
+  .card-text .fast,
+  .card-text .setup {
+    color: #fb9603;
+    /* sab ka color same */
+  }
+
+
+
+
+
+}
+
+
+/* brand ur country ka css */
+
+/* 🌈 Background + spacing */
+.scroll-section {
+  overflow: hidden;
+}
+
+
+
+/* 🌀 Scroll rows */
+.scroll-row {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  position: relative;
+}
+
+.scroll-track {
+  display: flex;
+  animation: scroll-left 25s linear infinite;
+}
+
+.right-to-left .scroll-track {
+  animation: scroll-right 25s linear infinite;
+}
+
+/* 🧩 Cards */
+.custom-card {
+  width: 200px;
+  /* lambi side (horizontal) */
+  height: 80px;
+  /* chhoti side (vertical) */
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(120, 120, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3px 20px 2px 20px;
+  /* upar 5px, neeche 2px, left/right 15px */
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(120, 120, 255, 0.2);
+}
+
+.custom-card img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.custom-card p {
+  margin: 0;
+  font-weight: 500;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* 🔄 Infinite Animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* certi ka css */
+body {
+  background-color: #f8f9fa;
+}
+
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 50%;
+  text-transform: capitalize;
+}
+
+h1 span {
+
+  color: #fb9603;
+}
+
+p {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+/* 🔹 Card Styles */
+.certi {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* 🔹 Image full cover */
+.certi img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+/* 🔹 Hover effects */
+.certi:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.certi:hover img {
+  transform: scale(1.05);
+}
+
+/* 🔹 Equal height for cards */
+.certi {
+  height: 250px;
+}
+
+/* 🔹 Center single card */
+.center-card {
+  display: flex;
+  justify-content: center;
+}
+
+/* 🔹 Modal image styling */
+.modal-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.btn-close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  font-size: 22px;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.btn-close-modal:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+
+
+
+/* JUST to override global p style */
+.cert-title {
+  margin: 8px 0 0 0 !important; /* card ke bilkul neeche */
+  text-align: center !important;
+  font-size: 20px !important;
+  
+  padding: 0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* founder and team css */
+
+.founder-team {
+  background: linear-gradient(180deg, #faf6ff 0%, #f0ecff 100%) !important;
+}
+
+.our p {
+ font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(1.5rem, 1vw, 3rem);
+  text-align: center;
+  opacity: 0.8;
+  color: #fb9603;
+  padding-top: 5vh;
+}
+
+.vision h1 {
+ font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(3rem, 2vw, 3rem);
+  text-align: center;
+  font-weight: bolder;
+  
+}
+
+.get p{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(1.5rem, 1vw, 3rem);
+  text-align: center;
+  opacity: 0.8;
+  }
+
+
+  .quote h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(1.5rem, 1vw, 3rem);
+    text-align: center;
+    font-style: italic;
+    opacity: 0.8;
+    margin-bottom: 1vh;
+
+  }
+.ceo p{
+
+  font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(1rem, 1vw, 3rem);
+    text-align: center;
+    font-style: italic;
+    opacity: 0.8;
+    margin-top: 5vh;
+    padding-bottom: 3vh;
+    color: #fb9603;
+}
+
+
+
+
+
+
+
+
+
+
+/* profile css */
+
+.profile-card {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 40px;
+                
+            background: linear-gradient(135deg, #f7f5ff, #eef1ff);
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+           display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
+          }
+
+
+
+
+
+           .photo-box {
+            width: 180px;
+            height: 180px;
+            background: #ffdb3d;
+            border-radius: 35px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        /* icons */
+      
+
+        .icon-row {
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.icon box-icon {
+  width: 25px;
+  height: 25px;
+  z-index: 2;
+  transition: transform 0.3s ease, color 0.3s ease;
+  fill: #000; /* default icon color */
+}
+
+/* Hover zoom */
+.icon:hover {
+  transform: scale(1.15);
+}
+
+/* Animated circle fill using pseudo-element */
+.icon::before {
+  content: "";
+  position: absolute;
+  top: 100%; /* start below */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: currentColor; /* color will depend on icon hover class */
+  z-index: 1;
+  transition: top 0.3s ease;
+}
+
+/* WhatsApp */
+.icon:nth-child(1) {
+  color: #25D366; /* pseudo-element color */
+}
+.icon:nth-child(1):hover::before {
+  top: 0; /* slide from bottom to top */
+}
+.icon:nth-child(1):hover box-icon {
+  fill: white;
+}
+
+/* Instagram */
+.icon:nth-child(2) {
+  color: #d62976; 
+}
+.icon:nth-child(2):hover::before {
+  top: 0;
+}
+.icon:nth-child(2):hover box-icon {
+  fill: white;
+}
+
+/* Facebook */
+.icon:nth-child(3) {
+  color: #1877F2;
+}
+.icon:nth-child(3):hover::before {
+  top: 0;
+}
+.icon:nth-child(3):hover box-icon {
+  fill: white;
+}
+
+
+
+
+
+
+/* about css of founder  */
+
+
+.ceo-about {
+    width:50%;    /* jitni width chaho rakh lo */
+      
+      font-family: 'Times New Roman', Times, serif;
+}
+.ceo-about p {
+    font-size: clamp(1.5rem, 1vw, 3rem);
+    font-weight: 100;
+     text-align: left;
+     opacity: 0.8;
+}
+.ceo-about h1 {
+    font-size: clamp(2rem, 2.5vw, 3rem);
+    font-weight: bolder;
+     text-align: left;
+     color: #fb9603;
+}
+
+.ceo-about h2 {
+    font-size: clamp(2rem, 2.5vw, 3rem);
+    font-weight: bolder;
+     text-align: left;
+}
+ .brand {
+    background: #fff;                 /* white background */
+    width: 100%;
+    padding: 15px 20px;               /* clean padding */
+    border-radius: 10px;              /* smooth corners */
+}
+
+.brand p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #333;
+
+    border-left: 4px solid #dcdcdc;   /* vertical grey line */
+    padding-left: 12px;               /* distance between text & line */
+}
+
+
+
+
+
+
+
+
+
+
+/* btn */
+ .team-btn {
+            background: linear-gradient(to right, #fb9603, #fcb100);
+            padding: 15px 30px;
+            border-radius: 40px;
+            border: none;
+            margin-top: 4vh;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: #fff;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(255,193,7,0.4);
+            transition: .3s;
+        }
+
+        .team-btn:hover {
+            transform: translateY(-4px);
+        }
+
+
+@media(max-width:991px) {
+  .profile-card {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    justify-content: center;
+  }
+
+
+
+  .ceo-about {
+    width:100%;    /* jitni width chaho rakh lo */
+      
+      font-family: 'Times New Roman', Times, serif;
+}
+
+
+}
+
+@media(max-width:750px) {
+  .profile-card {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    justify-content: center;
+  }
+
+
+
+  .ceo-about {
+    width:100%;    /* jitni width chaho rakh lo */
+      
+      font-family: 'Times New Roman', Times, serif;
+}
+
+.ceo-about p {
+    font-size: clamp(1.5rem, 1vw, 3rem);
+    font-weight: 100;
+     text-align: left;
+     opacity: 0.8;
+}
+.ceo-about h1 {
+    font-size: clamp(2rem, 2.5vw, 3rem);
+    font-weight: bolder;
+     text-align: left;
+     color: #fb9603;
+}
+
+.ceo-about h2 {
+    font-size: clamp(1rem, 1vw, 3rem);
+    font-weight: bolder;
+     text-align: center;
+}
+ .brand {
+    background: #fff;                 /* white background */
+    width: 100%;
+    padding: 10px 7px;               /* clean padding */
+    border-radius: 10px;              /* smooth corners */
+}
+
+.brand p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1;
+    color: #333;
+    border-left: 4px solid #dcdcdc;   /* vertical grey line */
+    padding-left: 12px;               /* distance between text & line */
+}
+
+
+.team-btn {
+            background: linear-gradient(to right, #fb9603, #fcb100);
+            padding: 14px 25px;
+            border-radius: 40px;
+            border: none;
+            margin-top: 4vh;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #fff;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(255,193,7,0.4);
+            transition: .3s;
+        }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* building css  */
+@media (max-width:992px){
+  .building {
+    display: flex;
+    flex-direction: column;
+  justify-content: center;
+
+}
+
+}
+
+
+@media (min-width:991px){
+  .left {
+    width: 50%;
+    padding-right: 40px;
+}
+
+.right {
+    width: 50%;
+    
+}
+}
+
+
+
+.building {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15vh;
+  background: linear-gradient(180deg, #faf6ff 0%, #f0ecff 100%) !important;
+}
+
+
+
+/* head */
+.building .dig-head h1{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  font-size: clamp(2rem, 2vw , 4rem);
+  text-align: left; 
+}
+
+.building .dig-para p {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 200;
+    font-size: clamp(1rem, 1vw, 2rem);
+    text-align: left;     /* line left se start hogi */
+    margin: 0;            /* extra space hat gaya */
+    padding: 0;           /* clean alignment */
+    line-height: 1.6;     /* readable spacing */
+    opacity: 0.8;
+}
+
+.building .dig-para2 p {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 200;
+    font-size: clamp(1rem, 1vw, 2rem);
+    text-align: left;     /* line left se start hogi */
+    margin: 0;            /* extra space hat gaya */
+    padding: 0;           /* clean alignment */
+    line-height: 1.6;     /* readable spacing */
+    opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+/* experice card ka css */
+
+
+
+.card11 {
+    background: linear-gradient(180deg, #faf6ff 0%, #f0ecff 100%) !important;
+    /* soft gradient */
+    border-radius: 15px !important;
+    /* slightly bigger rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    /* softer shadow for floating effect */
+    padding: 25px !important;
+    /* more breathing space */
+    width: 90%;
+    
+    /* optional max-width for large screens */
+    height: 60%;
+    margin: 20px auto;
+    /* more spacing top/bottom */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* optional hover effect */
+  }
+
+  .row h1{
+    font-family: 'Times New Roman', Times, serif;
+  color: #fb9603;
+    font-size: clamp(2rem, 2vw , 3rem);
+    text-align: left;
+  }
+  .row p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(1rem, 1vw , 3rem);
+    text-align: left;
+  }
+
+
+/* img css */
+.img-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.img-logo img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+}
+
+
+
+
+
+
+
+/* cards float */
+.first {
+  display: flex;
+  align-items: center;
+}
+
+.rigth {
+    position: relative;
+}
+
+
+
+/* Floating cards wrapper */
+.floating-cards {
+    position: absolute;
+    inset: 0; /* full overlay */
+    
+}
+
+/* ---------------- SHARED CARD BASE STYLE ---------------- */
+.card21 {
+    position: absolute;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 35%;
+    height: 15%;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.card22  {
+    position: absolute;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 35%;
+    height: 15%;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.card23 {
+   position: absolute;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 60%;
+    height: 15%;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+
+
+
+/* Hover effect */
+.card21:hover, .card22:hover, .card23:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+
+
+
+
+
+/* Icon default */
+.card-icon {
+    font-size: 32px;
+    color: #6c63ff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.card21:hover, .card22:hover, .card23:hover,
+.card21:focus, .card22:focus, .card23:focus {
+    transform: scale(1.1);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.card21:hover .card-icon,
+.card22:hover .card-icon,
+.card23:hover .card-icon,
+.card21:focus .card-icon,
+.card22:focus .card-icon,
+.card23:focus .card-icon {
+    transform: rotate(10deg);
+    color: #fb9603;
+}
+
+
+
+
+
+/* Text font */
+.card21 h1 {
+  font-family: 'Times New Roman';
+  font-size: clamp(1rem , 1vw , 2.5rem);
+  font-weight: bolder;
+
+}
+ .card22 h1 {
+   font-family: 'Times New Roman';
+  font-size: clamp(1rem , 1vw , 2.5rem);
+  font-weight: bolder;
+}
+ .card23 h1 {
+    font-family: 'Times New Roman';
+  font-size: clamp(1rem , 1vw , 2.5rem);
+  font-weight: bolder;
+}
+.card21 p {
+    font-family: 'Times New Roman';
+     font-size: clamp(1rem , 1vw , 2.5rem);
+}
+.card22 p {
+    font-family: 'Times New Roman';
+     font-size: clamp(0.9rem , 1vw , 2.5rem);
+}
+.card23 p {
+    font-family: 'Times New Roman';
+     font-size: clamp(0.9rem , 1vw , 2.5rem);
+}
+
+
+
+
+
+
+
+
+/* Positions */
+.card21 {
+    top: 45%;
+    right: -1%;
+}
+
+.card22 {
+    top: 20%;
+    left: -20%;
+}
+
+.card23 {
+    bottom: -10%;
+    right: 30%;
+}
+
+@media (max-width:760px ){
+  /* ---------------- SHARED CARD BASE STYLE ---------------- */
+.card21 {
+    position: absolute;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 45%;
+    height: 22%;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.card22  {
+    position: absolute;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 50%;
+    height: 20%;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.card23 {
+   position: absolute;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 70%;
+    height: 25%;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+
+
+
+/* Hover effect */
+.card21:hover, .card22:hover, .card23:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+
+
+
+
+
+/* Icon default */
+.card-icon {
+    font-size: 32px;
+    color: #6c63ff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.card21:hover, .card22:hover, .card23:hover,
+.card21:focus, .card22:focus, .card23:focus {
+    transform: scale(1.1);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.card21:hover .card-icon,
+.card22:hover .card-icon,
+.card23:hover .card-icon,
+.card21:focus .card-icon,
+.card22:focus .card-icon,
+.card23:focus .card-icon {
+    transform: rotate(10deg);
+    color: #fb9603;
+}
+
+
+
+
+
+/* Text font */
+.card21 h1 {
+  font-family: 'Times New Roman';
+  font-size: clamp(1rem , 1vw , 2.5rem);
+  font-weight: bolder;
+
+}
+ .card22 h1 {
+   font-family: 'Times New Roman';
+  font-size: clamp(1rem , 1vw , 2.5rem);
+  font-weight: bolder;
+}
+ .card23 h1 {
+    font-family: 'Times New Roman';
+  font-size: clamp(1rem , 1vw , 2.5rem);
+  font-weight: bolder;
+}
+.card21 p {
+    font-family: 'Times New Roman';
+     font-size: clamp(0.8rem , 1vw , 2.5rem);
+}
+.card22 p {
+    font-family: 'Times New Roman';
+     font-size: clamp(0.6rem , 1vw , 2.5rem);
+}
+.card23 p {
+    font-family: 'Times New Roman';
+     font-size: clamp(0.7rem , 1vw , 2.5rem);
+}
+
+
+
+
+
+
+
+
+/* Positions */
+.card21 {
+    top: 45%;
+    right: -1%;
+}
+
+.card22 {
+    top: 1%;
+    left: -3%;
+}
+
+.card23 {
+    bottom: -10%;
+    right: 20%;
+}
+
+}
+
+@media(min-width:1500px){
+  .card22  {
+    position: absolute;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 50%;
+    height: 20%;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.card21 {
+    position: absolute;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 45%;
+    height: 22%;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.card23 {
+   position: absolute;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 70%;
+    height: 23%;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* sales proof */
+
+.sales {
+  background: linear-gradient(180deg, #faf6ff 0%, #f0ecff 100%);
+}
+
+
+.sales {
+  text-align: center;
+}
+
+.sales .prof p {
+  display: inline-block;
+
+  padding: 2px 20px;
+
+  background: rgba(255, 215, 80, 0.3);
+
+
+
+  border-radius: 40px;
+
+  color: #fb9603;
+  /* deeper golden brown */
+  font-size: clamp(1rem, 1vw, 2rem);
+  font-weight: 600;
+
+
+  margin: 10vh auto 0 auto;
+
+
+}
+
+.sales .sal h1 {
+  font-size: 3rem;
+  /* responsive text size */
+  font-weight: 700;
+  /* bold look */
+  color: black;
+  /* golden-brown (matching your button) */
+  text-align: center;
+  /* center alignment */
+  margin-top: 5vh;
+  display: inline-flex;
+  /* ya flex */
+  gap: 1rem;
+  /* yahan se spacing automatically lagegi */
+  justify-content: center;
+}
+
+.sales .sal h1 span {
+  color: #fb9603;
+  /* slightly lighter golden shade for contrast */
+
+}
+
+
+
+
+/* pics wla css */
+.proof-section {
+  position: relative;
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 0;
+}
+
+.proof-wrapper {
+  display: flex;
+  gap: 60px;
+  width: 100%;
+  justify-content: center;
+}
+
+.proof-img {
+  width: 20%;
+  border-radius: 14px;
+  height: 60%;
+  object-fit: cover;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+/* Arrows */
+.arrow {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: #ffffff;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.2);
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.arrow:hover {
+  background: #f4f4f4;
+}
+
+/* Pagination container */
+.pagination {
+  margin-top: 25px;
+  text-align: center;
+  display: flex;
+  flex-wrap: nowrap;
+  /* buttons ek line me rahen */
+  overflow-x: auto;
+  /* scrollable if overflow */
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  box-sizing: border-box;
+}
+
+/* Buttons style */
+.pagination button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #f2f2f2;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  min-width: 40px;
+  max-width: 55px;
+  /* limit button width */
+  text-align: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+  /* prevent text wrap inside button */
+  transition: background 0.2s;
+}
+
+.pagination button:hover {
+  background: #e0e0e0;
+}
+
+/* Active page */
+.pagination button.active {
+  background: #fb9603;
+  font-weight: bold;
+  border-color: #fb9603;
+}
+
+/* Ellipsis */
+.pagination button.ellipsis {
+  background: transparent;
+  border: none;
+  font-weight: bold;
+  cursor: default;
+  padding: 8px 6px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Scrollbar styles (optional) */
+.pagination::-webkit-scrollbar {
+  height: 6px;
+}
+
+.pagination::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* Responsive tweaks */
+@media(max-width: 600px) {
+  .pagination button {
+    font-size: 14px;
+    min-width: 35px;
+    max-width: 45px;
+    padding: 6px 10px;
+  }
+
+  .pagination {
+    gap: 4px;
+    padding: 6px 5px;
+  }
+}
+
+
+
+/* View All Button */
+.view-all {
+  text-align: center;
+  margin-top: 20px;
+
+}
+
+.view-all button {
+  background: #fb9603;
+  padding: 12px 22px;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.view-all button:hover {
+  background: #f6a62d;
+}
+
+/* Mobile Responsive */
+@media (min-width: 500px) and (max-width: 991px) {
+  .proof-wrapper {
+    flex-direction: row;
+  }
+
+  .proof-img {
+    width: 70%;
+    height: 60%;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .proof-img {
+    width: 70%;
+    height: 60%;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Lightbox Background Overlay */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Close Button */
+.lightbox .close-btn {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Lightbox Image */
+#lightbox-img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 10px;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* clients reiews  css */
+
+
+.result {
+  background: linear-gradient(180deg, #faf6ff 0%, #f0ecff 100%);
+}
+
+.result {
+  text-align: center;
+}
+
+.result .results p {
+  display: inline-block;
+
+  padding: 2px 20px;
+
+  background: rgba(255, 215, 80, 0.3);
+
+
+
+  border-radius: 40px;
+
+  color: #fb9603;
+  /* deeper golden brown */
+  font-size: clamp(1rem, 1vw, 2rem);
+  font-weight: 600;
+
+
+  margin: 10vh auto 0 auto;
+
+
+}
+
+
+.result .ads {
+  display: flex;
+  align-items: center;
+  /* vertically icon + text equal line me */
+  gap: 20px;
+  /* icon aur heading ke beech spacing */
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.result .ads h1 {
+  font-size: 3rem;
+  /* responsive text size */
+  font-weight: 700;
+  /* bold look */
+  color: black;
+  /* golden-brown (matching your button) */
+  text-align: center;
+  /* center alignment */
+  margin-top: 3vh;
+  display: inline-flex;
+  /* ya flex */
+  gap: 1rem;
+  /* yahan se spacing automatically lagegi */
+  justify-content: center;
+}
+
+.sales .sal h1 span {
+  color: #fb9603;
+  /* slightly lighter golden shade for contrast */
+
+}
+
+
+
+
+@media (max-width:991px) {
+  .result .ads h1 {
+    font-size: 2rem;
+    /* responsive text size */
+    font-weight: 700;
+    /* bold look */
+    color: black;
+    /* golden-brown (matching your button) */
+    text-align: center;
+    /* center alignment */
+    margin-top: 5vh;
+    margin-bottom: 1vh;
+    display: inline-flex;
+    /* ya flex */
+    gap: 0.2rem;
+    /* yahan se spacing automatically lagegi */
+    justify-content: center;
+  }
+
+}
+
+
+
+/* NEW Slider Wrapper */
+.proof2-section {
+  position: relative;
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 0;
+}
+
+.proof2-wrapper {
+  display: flex;
+  gap: 60px;
+  width: 100%;
+  justify-content: center;
+}
+
+.proof2-img {
+  width: 20%;
+  border-radius: 14px;
+  height: 60%;
+  object-fit: cover;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* NEW Arrows */
+.arrow2 {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: #ffffff;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.2);
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.arrow2:hover {
+  background: #f4f4f4;
+}
+
+/* Pagination container */
+.pagination2 {
+  margin-top: 25px;
+  text-align: center;
+  display: flex;
+  flex-wrap: nowrap;
+  /* buttons ek line me rahen */
+  overflow-x: auto;
+  /* scrollable if overflow */
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  box-sizing: border-box;
+}
+
+/* Buttons style */
+.pagination2 button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #f2f2f2;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  min-width: 40px;
+  max-width: 55px;
+  /* limit button width */
+  text-align: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+  /* prevent text wrap inside button */
+  transition: background 0.2s;
+}
+
+.pagination2 button:hover {
+  background: #e0e0e0;
+}
+
+/* Active page */
+.pagination2 button.active {
+  background: #fb9603;
+  font-weight: bold;
+  border-color: #fb9603;
+}
+
+/* Ellipsis */
+.pagination2 button.ellipsis {
+  background: transparent;
+  border: none;
+  font-weight: bold;
+  cursor: default;
+  padding: 8px 6px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Scrollbar styles (optional) */
+.pagination2::-webkit-scrollbar {
+  height: 6px;
+}
+
+.pagination2::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* Responsive tweaks */
+@media(max-width: 600px) {
+  .pagination2 button {
+    font-size: 14px;
+    min-width: 35px;
+    max-width: 45px;
+    padding: 6px 10px;
+  }
+
+  .pagination2 {
+    gap: 4px;
+    padding: 6px 5px;
+  }
+}
+
+/* Hide default images */
+#img21,
+#img22,
+#img23 {
+  display: none;
+}
+
+
+
+/* NEW View More */
+.view-more2 {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.view-more2 button {
+  background: #fb9603;
+  padding: 12px 22px;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 10vh;
+}
+
+.view-more2 button:hover {
+  background: #ffab2c;
+}
+
+/* Responsive */
+@media(max-width: 991px) {
+  .proof2-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .proof2-img {
+    width: 70%;
+    height: 60%;
+  }
+}
+
+@media(max-width: 500px) {
+  .proof2-img {
+    width: 70%;
+    height: 60%;
+  }
+}
+
+
+
+
+/* services ka css  */
+
+
+.expertise {
+  background: linear-gradient(180deg, #faf6ff 0%, #f0ecff 100%);
+}
+
+.expertise {
+  text-align: center;
+}
+
+.expertise .our p {
+  display: inline-block;
+
+  padding: 2px 20px;
+
+  background: rgba(255, 215, 80, 0.3);
+
+
+
+  border-radius: 40px;
+
+  color: #fb9603;
+  /* deeper golden brown */
+  font-size: clamp(1rem, 1vw, 2rem);
+  font-weight: 600;
+
+
+  margin: 10vh auto 0 auto;
+
+
+}
+
+
+.expertise .services {
+  display: flex;
+  align-items: center;
+  /* vertically icon + text equal line me */
+  gap: 20px;
+  /* icon aur heading ke beech spacing */
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.expertise .services h1 {
+  font-size: 3rem;
+  /* responsive text size */
+  font-weight: 700;
+  /* bold look */
+  color: black;
+  /* golden-brown (matching your button) */
+  text-align: center;
+  /* center alignment */
+  margin-top: 3vh;
+  display: inline-flex;
+  /* ya flex */
+  gap: 1rem;
+  /* yahan se spacing automatically lagegi */
+  justify-content: center;
+}
+
+.expertise .services h1 span {
+  color: #fb9603;
+  /* slightly lighter golden shade for contrast */
+
+}
+
+
+
+
+@media (max-width:991px) {
+  .expertise .services h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 1vh;
+    display: inline-flex;
+    gap: 0.2rem;
+    justify-content: center;
+  }
+
+
+}
+
+
+@media (min-width:992px) {
+  .service-para {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 1.5;
+  }
+}
+
+
+.service-card {
+  background-color: #fff;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-card h2 {
+  font-size: 30px;
+  color: #333;
+  transition: color 0.3s ease;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover h2 {
+  color: #fb9603;
+}
+
+
+
+
+
+
+
+
+
+
+/* divider line css */
+
+
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 0;
+  margin-top: 15vh;
+}
+
+.line {
+  height: 2px;
+  background: linear-gradient(to right, transparent, #e6b93c, transparent);
+  width: 10%;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #fb9603;
+  border-radius: 50%;
+}
+
+.dot.big {
+  width: 12px;
+  height: 12px;
+}
+
+
+@media (max-width:500px) {
+  .line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #e6b93c, transparent);
+
+  }
+}
+
+
+
+
+
+
+/* ai logo se css  */
+.slip-system {
+  width: 100%;
+  max-width: 900px;
+  /* card se bara, section ke liye perfect */
+  margin: 0 auto;
+  /* center horizontally */
+  padding: 20px;
+  /* thoda space */
+}
+
+.slip-system h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  margin-top: 3vh;
+}
+
+.slip-system p {
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  justify-content: center;
+}
+
+.slip-system p span {
+  color: #fb9603;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*  your brand journey ka css  */
+.slip-card {
+  width: 100%;
+  background: #fff;
+  padding: 35px 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  /* enable flex layout */
+  flex-direction: column;
+  /* stack children vertically */
+  justify-content: space-between;
+  /* top content stays top, bottom-text stays bottom */
+  text-align: center;
+  min-height: 150px;
+  /* optional, to give card some minimum height */
+}
+
+
+.slip-card .top-text {
+  font-size: 18px;
+  color: #2c3643;
+  width: 90%;
+
+}
+
+.wa-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  font-size: 24px;
+  flex-wrap: nowrap;
+  /* row on large screens */
+  white-space: nowrap;
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .wa-row {
+    flex-direction: column;
+    /* stack vertically */
+    gap: 10px;
+    font-size: 18px;
+    white-space: normal;
+    /* allow line wrapping if needed */
+  }
+}
+
+
+
+
+.wa-link {
+  color: #fb9603;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.wa-link i {
+  color: #25d366;
+  margin-right: 5px;
+}
+
+
+.bottom-text {
+  font-size: 16px;
+  color: #6d7784;
+  font-style: italic;
+  margin-top: 3vh;
+}
+
+
+
+
+
+
+.slip-card {
+  margin-bottom: 20vh;
+  /* card ke neeche gap */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer css  */
+
+.footer {
+  background: #0f1a2b;
+  color: #d3d3d3;
+  padding: 60px 8% 30px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px;
+}
+
+/* Logo */
+.logo .l1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+}
+
+.logo .l2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+}
+
+.logo {
+  line-height: 0.8;
+  /* removes vertical gap */
+}
+
+
+
+.logo:hover .l1,
+.logo:hover .l2 {
+  color: #fb9603;
+  /* apni marzi ka color rakh lo */
+  transition: 0.3s ease;
+}
+
+/* Description */
+.descs {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 250px;
+}
+
+.founder {
+  margin-top: 15px;
+  color: #fb9603;
+  font-weight: 600;
+}
+
+/* Titles */
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: white;
+}
+
+/* Quick Links in 3+3 Grid */
+.quick-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 1px;
+}
+
+.quick-links .left a,
+.quick-links .right a {
+  display: block;
+  color: #d3d3d3;
+  text-decoration: none;
+  padding: 4px 0;
+  transition: 0.2s;
+}
+
+.quick-links .full {
+  grid-column: span 2;
+  /* bottom links full width */
+  margin-top: 10px;
+}
+
+.quick-links .full a {
+  display: block;
+  color: #d3d3d3;
+  text-decoration: none;
+  padding: 4px 0;
+  transition: 0.2s;
+}
+
+.quick-links a:hover {
+  color: #fb9603;
+}
+
+
+
+
+/* WhatsApp */
+.wa {
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
+}
+
+.wa:hover {
+  color: #1ebe5d;
+  text-shadow: 0 0 8px rgba(30, 190, 93, 0.5);
+  transition: 0.3s ease;
+}
+
+
+.resp {
+  margin-top: 8px;
+  font-size: 14px;
+  opacity: .8;
+}
+
+/* Subscribe */
+.subscribe-text {
+  margin-bottom: 8px;
+}
+
+.email {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #2d3a4d;
+  background: transparent;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.sub-btn {
+  width: 100%;
+  padding: 12px;
+  background: #3d3a2b;
+  border: none;
+  border-radius: 6px;
+  color: #fb9603;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.response-msg {
+  color: #4caf50;
+  font-size: 16px;
+  margin-top: 10px;
+  display: none;
+}
+
+
+.icons i {
+  font-size: 26px;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.icons i:hover {
+  color: white;
+}
+
+/* Bottom Line */
+.footer-line {
+  height: 1px;
+  background: #2a3648;
+  margin: 40px 0 25px;
+}
+
+/* Bottom Text */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  opacity: .6;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,334 @@
+
+/* Lightbox Background Overlay */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Close Button */
+.lightbox .close-btn {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Lightbox Image */
+#lightbox-img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 10px;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* top to bottm  */
+
+
+
+
+#topBtn1 {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 12px 16px;
+  background: #fb9603;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+  line-height: 24px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+#topBtn1:hover {
+  background: #faa11a;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* sales.php ka css  */
+
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    background: white;
+    color: #444;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+.arrow {
+    background: #fb9603;
+    color: black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+.arrow:hover {
+    background: #fb9603;
+    color: white;
+}
+
+
+
+
+
+
+.sales2 {
+  text-align: center;
+}
+
+.sales2 .prof2 p {
+  display: inline-block;
+
+  padding: 2px 20px;
+
+  background: rgba(255, 215, 80, 0.3);
+
+
+
+  border-radius: 40px;
+
+  color: #fb9603;
+  /* deeper golden brown */
+  font-size: clamp(1rem, 1vw, 2rem);
+  font-weight: 600;
+
+
+  margin: 10vh auto 0 auto;
+
+
+}
+
+.sales2 .sal2 h1 {
+  font-size: 2rem;
+  /* responsive text size */
+  font-weight: 700;
+  /* bold look */
+  color: black;
+  /* golden-brown (matching your button) */
+  text-align: center;
+  /* center alignment */
+  margin-top: 2vh;
+  display: inline-flex;
+  /* ya flex */
+  gap: 1rem;
+  /* yahan se spacing automatically lagegi */
+  justify-content: center;
+}
+
+.sales2 .sal2 h1 span {
+  color: #fb9603;
+  /* slightly lighter golden shade for contrast */
+
+}
+
+.sales2 .from p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(1.4rem ,1.3vw ,3rem);
+    margin-top: 1vh;
+     align-items: center;
+     opacity: 0.8;
+     text-align: center;
+}
+
+
+
+/* pics wla css */
+.proof-section {
+  position: relative;
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 0;
+}
+
+.proof-wrapper {
+  display: flex;
+  gap: 60px;
+  width: 100%;
+  justify-content: center;
+}
+
+.proof-img {
+  width: 20%;
+  border-radius: 14px;
+  height: 60%;
+  object-fit: cover;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+/* Arrows */
+.arrow2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: #ffffff;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.2);
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.arrow2:hover {
+  background: #f4f4f4;
+}
+
+/* Pagination container */
+.pagination {
+  margin-top: 25px;
+  text-align: center;
+  display: flex;
+  flex-wrap: nowrap;
+  /* buttons ek line me rahen */
+  overflow-x: auto;
+  /* scrollable if overflow */
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  box-sizing: border-box;
+}
+
+/* Buttons style */
+.pagination button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #f2f2f2;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  min-width: 40px;
+  max-width: 55px;
+  /* limit button width */
+  text-align: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+  /* prevent text wrap inside button */
+  transition: background 0.2s;
+}
+
+.pagination button:hover {
+  background: #e0e0e0;
+}
+
+/* Active page */
+.pagination button.active {
+  background: #fb9603;
+  font-weight: bold;
+  border-color: #fb9603;
+}
+
+/* Ellipsis */
+.pagination button.ellipsis {
+  background: transparent;
+  border: none;
+  font-weight: bold;
+  cursor: default;
+  padding: 8px 6px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Scrollbar styles (optional) */
+.pagination::-webkit-scrollbar {
+  height: 6px;
+}
+
+.pagination::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* Responsive tweaks */
+@media(max-width: 600px) {
+  .pagination button {
+    font-size: 14px;
+    min-width: 35px;
+    max-width: 45px;
+    padding: 6px 10px;
+  }
+
+  .pagination {
+    gap: 4px;
+    padding: 6px 5px;
+  }
+}
+
+
+
+
+/* Mobile Responsive */
+@media (min-width: 500px) and (max-width: 991px) {
+  .proof-wrapper {
+    flex-direction: row;
+  }
+
+  .proof-img {
+    width: 70%;
+    height: 60%;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .proof-img {
+    width: 70%;
+    height: 60%;
+  }
+
+}
+
+
